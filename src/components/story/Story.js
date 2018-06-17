@@ -14,7 +14,7 @@ const Story = ({ orderNumber, title, url, points, author, time }) => {
         </a>
         <div className="story__bottom-panel">
           {points} points by {author}
-          {distanceInWordsToNow(time, {addSuffix: true})}
+          {distanceInWordsToNow(time)}
         </div>
       </div>
     </div>

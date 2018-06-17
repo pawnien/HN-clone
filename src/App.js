@@ -36,18 +36,21 @@ class App extends Component {
   }
 
   render() {
-    const story = this.state.stories[0] || {};
+    const { stories } = this.state;
 
     return (
       <div className="app">
-        <Story
-          orderNumber={1}
-          title={story.title}
-          url={story.url}
-          points={story.score}
-          author={story.by}
-          time={story.time * 1000}
-        />
+        {stories.map((story, index) => (
+          <Story
+            key={story.time}
+            orderNumber={index + 1}
+            title={story.title}
+            url={story.url}
+            points={story.score}
+            author={story.by}
+            time={story.time * 1000}
+          />
+        ))}
       </div>
     );
   }
