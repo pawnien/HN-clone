@@ -1,11 +1,16 @@
 .story {
   display: flex;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 }
 
 .story__order-number {
   color: #828282;
   font-size: 16px;
+  padding-top: 3px;
+}
+
+.story__primary-row {
+  padding: 3px 0;
 }
 
 .story__link {
@@ -20,7 +25,4 @@
 .story__bottom-panel {
   font-size: 11px;
   color: #828282;
-}
-
-.story__title {
 }

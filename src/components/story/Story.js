@@ -9,12 +9,14 @@ const Story = ({ orderNumber, title, url, points, author, time }) => {
     <div className="story">
       <span className="story__order-number">{orderNumber}.</span>
       <div>
-        <a className="story__link" href={url}>
-          {title}
-        </a>
+        <div className="story__primary-row">
+          <a className="story__link" href={url}>
+            {title}
+          </a>
+        </div>
         <div className="story__bottom-panel">
-          {points} points by {author}
-          {distanceInWordsToNow(time)}
+          {points} points by {author}{" "}
+          {distanceInWordsToNow(time, { addSuffix: true })}
         </div>
       </div>
     </div>
