@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import Story from "./components/story/Story";
 
 const STORIES_PER_PAGE = 30;
 
@@ -35,7 +36,24 @@ class App extends Component {
   }
 
   render() {
-    return <div className="app" />;
+    const { stories } = this.state;
+
+    return (
+      <div className="app">
+        {stories.map((story, index) => (
+          <Story
+            key={story.time}
+            orderNumber={index + 1}
+            title={story.title}
+            url={story.url}
+            points={story.score}
+            author={story.by}
+            time={story.time * 1000}
+            commentsNumber={story.descendants}
+          />
+        ))}
+      </div>
+    );
   }
 }
 
