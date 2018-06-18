@@ -4,7 +4,15 @@ import { distanceInWordsToNow } from "date-fns";
 
 import "./Story.css";
 
-const Story = ({ orderNumber, title, url, points, author, time }) => {
+const Story = ({
+  orderNumber,
+  title,
+  url,
+  points,
+  author,
+  time,
+  commentsNumber
+}) => {
   return (
     <div className="story">
       <span className="story__order-number">{orderNumber}.</span>
@@ -16,7 +24,8 @@ const Story = ({ orderNumber, title, url, points, author, time }) => {
         </div>
         <div className="story__bottom-panel">
           {points} points by {author}{" "}
-          {distanceInWordsToNow(time, { addSuffix: true })}
+          {distanceInWordsToNow(time, { addSuffix: true })} | {commentsNumber}{" "}
+          comments
         </div>
       </div>
     </div>
@@ -29,7 +38,8 @@ Story.propTypes = {
   url: PropTypes.string.isRequired,
   points: PropTypes.number.isRequired,
   author: PropTypes.string.isRequired,
-  time: PropTypes.number.isRequired
+  time: PropTypes.number.isRequired,
+  commentsNumber: PropTypes.number.isRequired
 };
 
 export default Story;

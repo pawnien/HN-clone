@@ -49,6 +49,7 @@ class App extends Component {
             points={story.score}
             author={story.by}
             time={story.time * 1000}
+            commentsNumber={story.descendants}
           />
         ))}
       </div>
